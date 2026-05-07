@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acervo de Fotos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="acervo-style.css">
+</head>
+<body>
+    <div class="background-animation"></div>
+    <div class="acervo-container">
+        <div class="acervo-header">
+            <a href="index.html" class="btn-voltar">Voltar</a>
+            <h1>Acervo de Fotos</h1>
+        </div>
+        <div class="pastas-grid" id="pastas-grid"></div>
+        <div id="galerias-container"></div>
+    </div>
+
+    <!-- Modal Vanilla -->
+    <div id="modal-fotos" class="modal-fotos">
+        <div class="modal-overlay" onclick="fecharModal()"></div>
+        <button class="modal-btn modal-close" onclick="fecharModal()">&times;</button>
+        <button class="modal-btn modal-prev" onclick="mudarFoto(-1)">&#10094;</button>
+        <button class="modal-btn modal-next" onclick="mudarFoto(1)">&#10095;</button>
+        <div class="modal-content">
+            <img id="img-modal" src="" alt="">
+            <p id="legenda-modal"></p>
+        </div>
+    </div>
+
+    <script src="acervo-script.js"></script>
+</body>
+</html>
