@@ -1,6 +1,6 @@
 * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #ff69b4 0%, #ffb6d9 50%, #ffc0cb 100%);
     background-attachment: fixed; min-height: 100vh; overflow-x: hidden;
     color: #333; touch-action: manipulation;
@@ -45,13 +45,23 @@ body {
 }
 .letter { display: inline-block; animation: floatLetter 1.2s ease-in-out infinite; margin: 0 2px; }
 
+.buttons-section {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    z-index: 30;
+}
+
 .btn-acervo {
     display: inline-flex; align-items: center; justify-content: center;
     padding: 12px 28px; background: linear-gradient(135deg, #ff1493, #ff69b4);
     color: #fff; text-decoration: none; border-radius: 30px; font-weight: 700;
     font-size: clamp(0.9rem, 2.5vw, 1.1rem); box-shadow: 0 6px 18px rgba(255, 20, 147, 0.35);
     border: 2px solid rgba(255, 255, 255, 0.8); transition: all 0.3s ease;
-    z-index: 30; position: relative; white-space: nowrap; margin-top: 10px;
+    z-index: 30; position: relative; white-space: nowrap;
 }
 .btn-acervo:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 10px 25px rgba(255, 20, 147, 0.5); border-color: #fff; }
 .btn-acervo:active { transform: translateY(0) scale(0.98); }
@@ -62,7 +72,7 @@ body {
     color: #fff; text-decoration: none; border-radius: 30px; font-weight: 700;
     font-size: clamp(0.9rem, 2.5vw, 1.1rem); box-shadow: 0 6px 18px rgba(212, 86, 159, 0.35);
     border: 2px solid rgba(255, 255, 255, 0.8); transition: all 0.3s ease;
-    z-index: 30; position: relative; white-space: nowrap; margin-top: 10px; margin-left: 10px;
+    z-index: 30; position: relative; white-space: nowrap;
 }
 .btn-oracao:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 10px 25px rgba(212, 86, 159, 0.5); border-color: #fff; }
 .btn-oracao:active { transform: translateY(0) scale(0.98); }
@@ -105,7 +115,7 @@ body {
     .img-right { top: 55%; right: 2%; }
     .img-bottom-left { bottom: 10%; left: 4%; }
     .img-bottom-right { bottom: 10%; right: 4%; }
-    .image-box { width: clamp(75px, 14vw, 110px); height: auto; }
+    .image-box { width: clamp(75px, 14vw, 110px); height: clamp(75px, 14vw, 110px); }
 }
 
 /* MOBILE: Zero sobreposição */
@@ -153,4 +163,17 @@ body {
 
 @supports (padding: max(0px)) {
     .main-container { padding-left: max(8px, env(safe-area-inset-left)); padding-right: max(8px, env(safe-area-inset-right)); }
+}
+
+.footer-love {
+    position: fixed;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    z-index: 5;
+    pointer-events: none;
 }
