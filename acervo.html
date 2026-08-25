@@ -2,35 +2,71 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acervo de Fotos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#ff69b4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>📸 Nosso Acervo de Memórias 💕</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="acervo-style.css">
 </head>
 <body>
     <div class="background-animation"></div>
+    
     <div class="acervo-container">
-        <div class="acervo-header">
-            <a href="index.html" class="btn-voltar">Voltar</a>
-            <h1>Acervo de Fotos</h1>
+        <!-- Cabeçalho Principal -->
+        <header class="acervo-header">
+            <div class="acervo-top-nav">
+                <a href="index.html" class="btn-voltar">
+                    <span class="btn-voltar-icon">←</span> Início
+                </a>
+                <a href="oracao.html" class="btn-oracao-link">
+                    🙏 Oração
+                </a>
+            </div>
+
+            <div class="acervo-title-group">
+                <h1>📸 Nosso Acervo de Fotos</h1>
+                <p class="acervo-subtitle">Cada foto, um capítulo lindo da nossa história de amor.</p>
+                <div class="acervo-stats" id="acervo-stats"></div>
+            </div>
+        </header>
+
+        <!-- Controles: Busca e Filtros por Mês -->
+        <div class="controles-filtros" id="controles-filtros">
+            <div class="busca-wrapper">
+                <span class="busca-icon">🔍</span>
+                <input type="text" id="input-busca" class="input-busca" placeholder="Buscar por dia, mês ou momento..." autocomplete="off">
+                <button id="btn-limpar-busca-input" class="btn-limpar-input" title="Limpar busca" style="display:none;">&times;</button>
+            </div>
+            <div class="meses-filtro" id="meses-filtro"></div>
         </div>
+
+        <!-- Grid de Pastas/Álbuns -->
         <div class="pastas-grid" id="pastas-grid"></div>
+
+        <!-- Seções das Galerias de cada pasta -->
         <div id="galerias-container"></div>
     </div>
 
-    <!-- Modal Vanilla -->
-    <div id="modal-fotos" class="modal-fotos">
+    <!-- Modal / Lightbox de Fotos & Vídeos -->
+    <div id="modal-fotos" class="modal-fotos" role="dialog" aria-modal="true">
         <div class="modal-overlay" onclick="fecharModal()"></div>
-        <button class="modal-btn modal-close" onclick="fecharModal()">&times;</button>
-        <button class="modal-btn modal-prev" onclick="mudarFoto(-1)">&#10094;</button>
-        <button class="modal-btn modal-next" onclick="mudarFoto(1)">&#10095;</button>
+        
+        <div class="modal-top-bar">
+            <span id="contador-modal" class="modal-pill-counter"></span>
+            <button class="modal-btn modal-close" onclick="fecharModal()" title="Fechar (Esc)">&times;</button>
+        </div>
+
+        <button class="modal-btn modal-prev" onclick="mudarFoto(-1)" title="Foto Anterior (Seta Esquerda)">&#10094;</button>
+        <button class="modal-btn modal-next" onclick="mudarFoto(1)" title="Próxima Foto (Seta Direita)">&#10095;</button>
+        
         <div class="modal-content">
-            <img id="img-modal" src="" alt="">
-            <p id="contador-modal" style="color:#fff;font-size:0.85rem;opacity:0.6;margin-bottom:5px;"></p>
-            <p id="legenda-modal"></p>
+            <img id="img-modal" src="" alt="" class="midia-modal">
+            <p id="legenda-modal" class="modal-legenda"></p>
         </div>
     </div>
 

@@ -2,11 +2,14 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>💕 Oração 💕</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#ff69b4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>💕 Nossa Oração 💕</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="oracao-style.css">
 </head>
 <body>
@@ -14,13 +17,22 @@
     <div class="background-animation"></div>
 
     <div class="oracao-container">
-        <!-- Cabeçalho -->
-        <a href="index.html" class="btn-voltar">← Voltar</a>
+        <!-- Navegação superior -->
+        <div class="oracao-nav">
+            <a href="index.html" class="btn-voltar">
+                <span>←</span> Início
+            </a>
+            <a href="acervo.html" class="btn-acervo-link">
+                <span>📸</span> Acervo
+            </a>
+        </div>
 
         <!-- Card da oração -->
         <div class="oracao-card">
             <div class="oracao-header">
-                <h1>💕 Oração 💕</h1>
+                <div class="oracao-icone-topo">🕊️ ✨ 💕</div>
+                <h1>Nossa Oração</h1>
+                <p class="oracao-subtitulo">Entregando nossa história nas mãos de Deus</p>
             </div>
 
             <div class="oracao-content">
@@ -50,14 +62,21 @@
                 <p class="verso-destaque">Senhor, nós confiamos em Ti.</p>
                 <p>Que seja feito não o nosso tempo, mas o Teu.</p>
                 
-                <p class="verso-amem">Amém</p>
+                <p class="verso-amem">Amém. 🙏</p>
+
+                <div class="bencao-section">
+                    <button id="btn-abencoar" class="btn-abencoar" type="button">
+                        <span>✨</span> Abençoar Nosso Amor <span>💕</span>
+                    </button>
+                    <p id="msg-bencao" class="msg-bencao" style="display:none;">Que Deus continue iluminando e guardando cada passo nosso! ❤️</p>
+                </div>
             </div>
         </div>
 
-        <!-- Decoração -->
+        <!-- Decoração de corações flutuantes -->
         <div class="coracao-flutuante coracao-1">💕</div>
-        <div class="coracao-flutuante coracao-2">💕</div>
-        <div class="coracao-flutuante coracao-3">💕</div>
+        <div class="coracao-flutuante coracao-2">✨</div>
+        <div class="coracao-flutuante coracao-3">💖</div>
     </div>
 
     <script src="oracao-script.js"></script>
