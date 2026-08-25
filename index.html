@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>💕 Para Você 💕</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Fundo animado -->
+    <div class="background-animation"></div>
+
+    <!-- Container principal -->
+    <div class="main-container">
+        
+        <!-- Coração no centro -->
+        <div class="heart-section">
+            <div class="heart-container">
+                <svg class="heart-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <clipPath id="heart-clip">
+                            <path d="M50,90 C20,70 5,55 5,40 C5,25 15,15 25,15 C35,15 45,25 50,35 C55,25 65,15 75,15 C85,15 95,25 95,40 C95,55 80,70 50,90 Z"/>
+                        </clipPath>
+                    </defs>
+                    <path d="M50,90 C20,70 5,55 5,40 C5,25 15,15 25,15 C35,15 45,25 50,35 C55,25 65,15 75,15 C85,15 95,25 95,40 C95,55 80,70 50,90 Z" fill="none" stroke="#ff1493" stroke-width="2"/>
+                    <image x="5" y="10" width="90" height="80" 
+                           xlink:href="imagem_um.jpg" 
+                           clip-path="url(#heart-clip)"
+                           xmlns:xlink="http://www.w3.org/1999/xlink"/>
+                </svg>
+            </div>
+            <div class="heart-pulse"></div>
+            <div class="heart-pulse" style="animation-delay: 0.3s;"></div>
+            
+            <!-- Texto "EU TE AMO" -->
+            <div class="text-section">
+                <h1 class="big-text">
+                    <span class="letter" style="animation-delay: 0s;">E</span>
+                    <span class="letter" style="animation-delay: 0.1s;">U</span>
+                    <span class="letter" style="animation-delay: 0.2s;">&nbsp;</span>
+                    <span class="letter" style="animation-delay: 0.3s;">T</span>
+                    <span class="letter" style="animation-delay: 0.4s;">E</span>
+                    <span class="letter" style="animation-delay: 0.5s;">&nbsp;</span>
+                    <span class="letter" style="animation-delay: 0.6s;">A</span>
+                    <span class="letter" style="animation-delay: 0.7s;">M</span>
+                    <span class="letter" style="animation-delay: 0.8s;">O</span>
+                </h1>
+                <div class="buttons-section">
+                    <a href="acervo.html" class="btn-acervo">📸 Acervo de Fotos</a>
+                    <a href="oracao.html" class="btn-oracao">🙏 Oração</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Imagens espalhadas - TODAS visíveis no mobile -->
+        <div class="floating-image img-top-left">
+            <div class="image-box">
+                <img src="imagem_dois.jpg" alt="Coca Maracúja">
+            </div>
+            <p>Coca Maracúja</p>
+        </div>
+
+        <div class="floating-image img-top-right">
+            <div class="image-box">
+                <img src="imagem_tres.jpg" alt="18">
+            </div>
+            <p>18</p>
+        </div>
+
+        <div class="floating-image img-left">
+            <div class="image-box">
+                <img src="imagem_quatro.jpg" alt="McQueen e Sally">
+            </div>
+            <p>McQueen e Sally</p>
+        </div>
+
+        <div class="floating-image img-right">
+            <div class="image-box">
+                <img src="imagem_cinco.jpg" alt="Dupla de Beach Tennis">
+            </div>
+            <p>Dupla de Beach Tennis</p>
+        </div>
+
+        <div class="floating-image img-bottom-left">
+            <div class="image-box">
+                <img src="imagem_seis.jpg" alt="Palha Italiana">
+            </div>
+            <p>Palha Italiana</p>
+        </div>
+
+        <div class="floating-image img-bottom-right">
+            <div class="image-box">
+                <img src="imagem_sete.jpg" alt="Abraços quentinhos">
+            </div>
+            <p>Abraços quentinhos</p>
+        </div>
+        <!-- Assinatura sutil -->
+        <p class="footer-love">feito com 💕</p>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const cores = ['#ff1493', '#ff69b4', '#ffc0cb', '#fff', '#ffb6d9'];
+        for (let i = 0; i < 15; i++) {
+            const confete = document.createElement('div');
+            const cor = cores[Math.floor(Math.random() * cores.length)];
+            const tamanho = 6 + Math.random() * 6;
+            confete.style.cssText = `
+                position: fixed;
+                width: ${tamanho}px;
+                height: ${tamanho}px;
+                background: ${cor};
+                border-radius: 50%;
+                top: -10px;
+                left: ${Math.random() * 100}%;
+                animation: confete-drop ${2.5 + Math.random() * 3}s linear forwards;
+                z-index: 100;
+                opacity: ${0.6 + Math.random() * 0.4};
+                pointer-events: none;
+            `;
+            document.body.appendChild(confete);
+            setTimeout(() => confete.remove(), 6000);
+        }
+
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes confete-drop {
+                0% { transform: translateY(0) rotate(0deg) scale(1); }
+                100% { transform: translateY(110vh) rotate(720deg) scale(0.3); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+    });
+    </script>
+</body>
+</html>

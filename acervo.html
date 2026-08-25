@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acervo de Fotos</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="acervo-style.css">
+</head>
+<body>
+    <div class="background-animation"></div>
+    <div class="acervo-container">
+        <div class="acervo-header">
+            <a href="index.html" class="btn-voltar">Voltar</a>
+            <h1>Acervo de Fotos</h1>
+        </div>
+        <div class="pastas-grid" id="pastas-grid"></div>
+        <div id="galerias-container"></div>
+    </div>
+
+    <!-- Modal Vanilla -->
+    <div id="modal-fotos" class="modal-fotos">
+        <div class="modal-overlay" onclick="fecharModal()"></div>
+        <button class="modal-btn modal-close" onclick="fecharModal()">&times;</button>
+        <button class="modal-btn modal-prev" onclick="mudarFoto(-1)">&#10094;</button>
+        <button class="modal-btn modal-next" onclick="mudarFoto(1)">&#10095;</button>
+        <div class="modal-content">
+            <img id="img-modal" src="" alt="">
+            <p id="contador-modal" style="color:#fff;font-size:0.85rem;opacity:0.6;margin-bottom:5px;"></p>
+            <p id="legenda-modal"></p>
+        </div>
+    </div>
+
+    <script src="acervo-script.js"></script>
+</body>
+</html>
